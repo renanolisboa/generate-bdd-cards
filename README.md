@@ -69,12 +69,12 @@ GOOGLE_DOCS_DOCUMENT_ID=your_document_id
 GOOGLE_APPLICATION_CREDENTIALS=path/to/service-account.json
 ```
 
-### AI Configuration
+### Gepeto Configuration
 ```env
-AI_API_BASE=https://your-ai-service.com
-AI_API_KEY=your_ai_api_key
-AI_MODEL=gpt-4
-AI_ENDPOINT=/v1/chat/completions
+GEPETO_API_BASE=https://your-gepeto-instance.com
+GEPETO_API_KEY=your_gepeto_api_key
+GEPETO_MODEL=gpt-4
+GEPETO_ENDPOINT=/v1/chat/completions
 ```
 
 ### App Configuration
@@ -112,11 +112,11 @@ Read and normalize content from a Google Docs document.
 npm run dev gdocs:read
 ```
 
-### `ai:generate`
+### `gepeto:generate`
 Generate BDD-style cards from document content.
 
 ```bash
-npm run dev ai:generate
+npm run dev gepeto:generate
 ```
 
 ### `jira:create-batch`
@@ -161,7 +161,7 @@ npm run dev gdocs:read
 
 2. **Generate BDD cards**:
 ```bash
-npm run dev ai:generate
+npm run dev gepeto:generate
 ```
 
 3. **Preview and create issues**:
@@ -173,7 +173,7 @@ npm run dev jira:create-batch
 
 ```bash
 # Use a specific document file
-npm run dev ai:generate --file custom-doc.md
+npm run dev gepeto:generate --file custom-doc.md
 
 # Use specific BDD cards file
 npm run dev jira:create-batch --file custom-cards.json
@@ -207,8 +207,8 @@ npm run dev jira:create-batch --file custom-cards.json
 2. Run the OAuth flow to get user consent
 3. Store the token for future use
 
-### AI Service Authentication
-1. Get your API key from your preferred AI service (OpenAI, Anthropic, etc.)
+### Gepeto Authentication
+1. Get your API key from the Gepeto service
 2. Configure the base URL and endpoint
 
 ## BDD Card Format
@@ -248,7 +248,7 @@ The CLI caches responses for troubleshooting:
 
 - `.cache/source_doc_latest.md` - Latest document content
 - `.cache/bdd_cards_latest.json` - Latest generated cards
-- `.cache/ai_response_latest.txt` - Raw AI response
+- `.cache/gepeto_response_latest.txt` - Raw Gepeto response
 - `.cache/*_timestamp.*` - Timestamped versions
 
 ## Testing
@@ -273,7 +273,7 @@ This will generate sample BDD cards without making external API calls.
    - Ensure the document is shared with your service account
    - Check the service account JSON file path
 
-3. **AI API errors**
+3. **Gepeto API errors**
    - Verify your API key is correct
    - Check the base URL and endpoint configuration
 
@@ -306,7 +306,7 @@ src/
 ├── modules/          # API client modules
 │   ├── jira.ts      # Jira integration
 │   ├── gdocs.ts     # Google Docs integration
-│   └── ai.ts        # AI service integration
+│   └── gepeto.ts    # Gepeto integration
 ├── types/           # TypeScript type definitions
 ├── utils/           # Utility functions
 │   ├── config.ts    # Configuration management
