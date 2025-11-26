@@ -1396,9 +1396,6 @@ Precisa de ajuda?
 4. 💬 **Abra uma issue** no GitHub
 5. 📧 **Entre em contato** com a equipe
 
-## 📄 Licença
-
-MIT License - Veja o arquivo LICENSE para detalhes.
 
 ---
 
