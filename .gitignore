@@ -16,6 +16,13 @@ build/
 .env.test.local
 .env.production.local
 
+# Authentication tokens (NEVER commit these)
+.google_tokens.json
+.oauth/
+*.token
+*.tokens
+auth_tokens/
+
 # IDE and editor files
 .vscode/
 .idea/
